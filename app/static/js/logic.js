@@ -1,6 +1,9 @@
 Moralis.initialize(""); // Application id from moralis.io
 Moralis.serverURL = ""; //Server url from moralis.io
 
+/* Valid values for chain in https://docs.moralis.io/moralis-server/transactions-and-balances/intro */
+const chainToQuery = ""
+
 //dApp frontend logic
 async function login(){
   document.getElementById('submit').setAttribute("disabled", null);
@@ -14,11 +17,8 @@ async function login(){
   })
 }
 
-/* Valid values for chain in https://docs.moralis.io/moralis-server/transactions-and-balances/intro */
-
-
 async function getBalances(){
-  const balances = await Moralis.Web3.getAllERC20( { chain: "" }).then(buildTable);
+  const balances = await Moralis.Web3.getAllERC20( { chain: chainToQuery }).then(buildTable);
 }
 
 
