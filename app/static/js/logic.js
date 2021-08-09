@@ -1,5 +1,5 @@
-Moralis.initialize("W9CCwwg1nQQ1KFrqWYx8YY1nojrxTINwhMHLwYHD"); // Application id from moralis.io
-Moralis.serverURL = "https://0iooker5q9ww.usemoralis.com:2053/server"; //Server url from moralis.io
+Moralis.initialize(""); // Application id from moralis.io
+Moralis.serverURL = ""; //Server url from moralis.io
 
 //dApp frontend logic
 async function login(){
@@ -14,9 +14,13 @@ async function login(){
   })
 }
 
+/* Valid values for chain in https://docs.moralis.io/moralis-server/transactions-and-balances/intro */
+
+
 async function getBalances(){
-  const balances = await Moralis.Web3.getAllERC20( { chain: "rinkeby" }).then(buildTable);
+  const balances = await Moralis.Web3.getAllERC20( { chain: "" }).then(buildTable);
 }
+
 
 function buildTable(data){
   document.getElementById("resultSpace").innerHTML =  `<table class="table table-dark table-striped" id="myTable">
